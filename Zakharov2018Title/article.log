@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=latex 2018.10.4)  4 OCT 2018 23:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2018.10.4)  6 OCT 2018 13:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -308,7 +308,18 @@ Package: xy 2013/10/06 Xy-pic version 3.8.9
 (/usr/share/texlive/texmf-dist/tex/generic/xypic/xyarrow.tex
  Xy-pic option: Arrow and Path feature v.3.9 path, \ar, loaded)
 (/usr/share/texlive/texmf-dist/tex/generic/xypic/xygraph.tex
- Xy-pic option: Graph feature v.3.11 loaded) loaded))
+ Xy-pic option: Graph feature v.3.11 loaded) loaded)
+(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf.tex
+ Xy-pic option: PDF driver v.1.7 Xy-pic pdf driver: `color' extension support
+(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-co.tex loaded)
+Xy-pic pdf driver: `curve' extension support
+(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-cu.tex loaded)
+Xy-pic pdf driver: `frame' extension support
+(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-fr.tex loaded)
+Xy-pic pdf driver: `line' extension support
+(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-li.tex loaded)
+Xy-pic pdf driver: `rotate' extension support
+(/usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-ro.tex loaded) loaded))
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
@@ -321,10 +332,10 @@ Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: dvips.def on input line 99.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/dvips.def
-File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen149
 \Gin@req@width=\dimen150
@@ -405,13 +416,20 @@ Package: pdftexcmds 2018/01/21 v0.26 Utility functions of pdfTeX for LuaTeX (HO
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 )
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
 
-Package epstopdf Warning: Drivers other than `pdftex' and `luatex' are not supp
-orted.
-
-)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
@@ -463,21 +481,20 @@ ex
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
 )
-Driver file for pgf: pgfsys-dvips.def
+Driver file for pgf: pgfsys-pdftex.def
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-dvips.def
-File: pgfsys-dvips.def 2014/07/09  (rcs-revision 1.25)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
 
-(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-postsc
-ript.def
-File: pgfsys-common-postscript.def 2008/10/01  (rcs-revision 1.22)
-\pgf@objectcount=\count129
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
 )))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
 tex
 File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
-\pgfsyssoftpath@smallbuffer@items=\count130
-\pgfsyssoftpath@bigbuffer@items=\count131
+\pgfsyssoftpath@smallbuffer@items=\count129
+\pgfsyssoftpath@bigbuffer@items=\count130
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
 tex
@@ -488,8 +505,9 @@ Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: dvips.def on input line 225.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
 Package xcolor Info: Model `RGB' extended on input line 1364.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
@@ -506,7 +524,7 @@ Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen169
-\pgfmath@count=\count132
+\pgfmath@count=\count131
 \pgfmath@box=\box35
 \pgfmath@toks=\toks43
 \pgfmath@stack@operand=\toks44
@@ -530,7 +548,7 @@ tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
 thmetics.code.tex)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count133
+\c@pgfmathroundto@lastzeros=\count132
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
 x
@@ -568,7 +586,7 @@ File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
 \pgfpic=\box36
 \pgf@hbox=\box37
 \pgf@layerbox@main=\box38
-\pgf@picture@serial@count=\count134
+\pgf@picture@serial@count=\count133
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
 ode.tex
@@ -601,7 +619,7 @@ File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
 \pgf@max=\dimen193
-\pgf@sys@shading@range@num=\count135
+\pgf@sys@shading@range@num=\count134
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
@@ -658,7 +676,7 @@ Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
 .code.tex
 File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
-\pgf@plot@mark@count=\count136
+\pgf@plot@mark@count=\count135
 \pgfplotmarksize=\dimen198
 )
 \tikz@lastx=\dimen199
@@ -671,18 +689,18 @@ File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
 \tikz@figbox@bg=\box42
 \tikz@tempbox=\box43
 \tikz@tempbox@bg=\box44
-\tikztreelevel=\count137
-\tikznumberofchildren=\count138
-\tikznumberofcurrentchild=\count139
-\tikz@fig@count=\count140
+\tikztreelevel=\count136
+\tikznumberofchildren=\count137
+\tikznumberofcurrentchild=\count138
+\tikz@fig@count=\count139
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
-\pgfmatrixcurrentrow=\count141
-\pgfmatrixcurrentcolumn=\count142
-\pgf@matrix@numberofcolumns=\count143
+\pgfmatrixcurrentrow=\count140
+\pgfmatrixcurrentcolumn=\count141
+\pgf@matrix@numberofcolumns=\count142
 )
-\tikz@expandcount=\count144
+\tikz@expandcount=\count143
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
 zlibrarytopaths.code.tex
@@ -698,8 +716,8 @@ Package: pgfplots 2017/06/05 v1.15 Data Visualization (1.15)
 \t@pgfplots@tokb=\toks49
 \t@pgfplots@tokc=\toks50
 \pgfplots@tmpa=\dimen261
-\c@pgfplots@coordindex=\count145
-\c@pgfplots@scanlineindex=\count146
+\c@pgfplots@coordindex=\count144
+\c@pgfplots@scanlineindex=\count145
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
 .tex))
@@ -715,7 +733,7 @@ Package pgfplots: loading complementary arithmetics for your pgf version...
 gfsupp_pgflibraryfpu.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
 gfsupp_pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count147
+\c@pgfmathroundto@lastzeros=\count146
 ))
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
@@ -724,13 +742,13 @@ tructure.code.tex)
 tructureext.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
 .code.tex
-\c@pgfplotsarray@tmp=\count148
+\c@pgfplotsarray@tmp=\count147
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
 x.code.tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
 d.code.tex
-\c@pgfplotstable@counta=\count149
+\c@pgfplotstable@counta=\count148
 \t@pgfplotstable@a=\toks51
 )
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
@@ -743,10 +761,10 @@ de.tex))
 .tex)
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
 fshading.code.tex
-\c@pgfplotslibrarysurf@no=\count150
+\c@pgfplotslibrarysurf@no=\count149
 
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
-shading.pgfsys-dvips.def)))
+shading.pgfsys-pdftex.def)))
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.
 tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
@@ -775,7 +793,7 @@ e.tex
 \pgfdecoratedinputsegmentcompleteddistance=\dimen264
 \pgfdecoratedinputsegmentremainingdistance=\dimen265
 \pgf@decorate@distancetomove=\dimen266
-\pgf@decorate@repeatstate=\count151
+\pgf@decorate@repeatstate=\count150
 \pgfdecorationsegmentamplitude=\dimen267
 \pgfdecorationsegmentlength=\dimen268
 )
@@ -789,7 +807,7 @@ decorations.pathmorphing.code.tex))
 zlibrarydecorations.pathreplacing.code.tex
 (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
 decorations.pathreplacing.code.tex))
-\pgfplots@numplots=\count152
+\pgfplots@numplots=\count151
 \pgfplots@xmin@reg=\dimen269
 \pgfplots@xmax@reg=\dimen270
 \pgfplots@ymin@reg=\dimen271
@@ -817,44 +835,44 @@ Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
 \dgHORIZPAD=\skip59
 \dgVERTPAD=\skip60
 \dgLABELOFFSET=\skip61
-\dgARROWPARTS=\count153
+\dgARROWPARTS=\count152
 \dgDOTSPACING=\skip62
 \dgDOTSIZE=\skip63
-\dgMAXSQUARE=\count154
-\dgMINDBLSQ=\count155
+\dgMAXSQUARE=\count153
+\dgMINDBLSQ=\count154
 \dgCOLUMNWIDTH=\skip64
-\dg@HORIZ=\count156
-\dg@VERT=\count157
-\dg@XLPAD=\count158
-\dg@YBPAD=\count159
-\dg@XRPAD=\count160
-\dg@YTPAD=\count161
-\dg@X=\count162
-\dg@Y=\count163
-\dg@XGRID=\count164
-\dg@YGRID=\count165
-\dg@SIZE=\count166
-\dg@USERSIZE=\count167
-\dg@DX=\count168
-\dg@DY=\count169
-\dg@XLBL=\count170
-\dg@YLBL=\count171
-\dg@XOFFSET=\count172
-\dg@YOFFSET=\count173
-\dg@LBLOFF=\count174
-\dg@XLBLOFF=\count175
-\dg@YLBLOFF=\count176
-\dg@LBLPOS=\count177
-\dg@XTEMP=\count178
-\dg@YTEMP=\count179
-\dg@ZTEMP=\count180
-\dg@XNODE=\count181
-\dg@YNODE=\count182
-\dg@XEND=\count183
-\dg@YEND=\count184
-\dg@WEND=\count185
-\dg@HEND=\count186
-\dg@COUNT=\count187
+\dg@HORIZ=\count155
+\dg@VERT=\count156
+\dg@XLPAD=\count157
+\dg@YBPAD=\count158
+\dg@XRPAD=\count159
+\dg@YTPAD=\count160
+\dg@X=\count161
+\dg@Y=\count162
+\dg@XGRID=\count163
+\dg@YGRID=\count164
+\dg@SIZE=\count165
+\dg@USERSIZE=\count166
+\dg@DX=\count167
+\dg@DY=\count168
+\dg@XLBL=\count169
+\dg@YLBL=\count170
+\dg@XOFFSET=\count171
+\dg@YOFFSET=\count172
+\dg@LBLOFF=\count173
+\dg@XLBLOFF=\count174
+\dg@YLBLOFF=\count175
+\dg@LBLPOS=\count176
+\dg@XTEMP=\count177
+\dg@YTEMP=\count178
+\dg@ZTEMP=\count179
+\dg@XNODE=\count180
+\dg@YNODE=\count181
+\dg@XEND=\count182
+\dg@YEND=\count183
+\dg@WEND=\count184
+\dg@HEND=\count185
+\dg@COUNT=\count186
 \dg@NODEBOX=\box46
 \dg@LABONEBOX=\box47
 \dg@LABTWOBOX=\box48
@@ -866,98 +884,112 @@ Package: balance 1999/02/23 4.3 (PWD)
 (/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
 \multirow@colwidth=\skip65
-\multirow@cntb=\count188
+\multirow@cntb=\count187
 \multirow@dima=\skip66
 \bigstrutjot=\dimen276
 )
 \vskipBeforeTitle=\skip67
 \vskipAfterTitle=\skip68
-\c@PaperNo=\count189
-\c@mmroTotal=\count190
-\c@mmroCorrected=\count191
-\c@mmroReviewed=\count192
-\c@mmroAccepted=\count193
-\c@mmroMayBeCompleted=\count194
-\c@mmroMustBeCompleted=\count195
-\c@mmroRejected=\count196
-\c@mmroReviewerNote=\count197
-\c@mmroTotalReviewedPapers=\count198
-\c@mmroTotalReviewerNotes=\count199
-\c@mmroFinalReviewerNotes=\count266
-\c@@authors@no=\count267
-\c@TodoCount=\count268
-\c@PictureNo=\count269
-\c@Theorem=\count270
-\c@State=\count271
-\c@Corollary=\count272
-\c@Def=\count273
-\c@Axiom=\count274
-\c@Hypothesis=\count275
-\c@Assumption=\count276
-\c@Problem=\count277
-\c@Example=\count278
-\c@Fact=\count279
-\c@Remark=\count280
-\c@Notice=\count281
-\c@Rule=\count282
-\c@Condition=\count283
-)
-No file article.aux.
-\openout1 = `article.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 26.
-LaTeX Font Info:    Try loading font information for T2A+cmr on input line 26.
+\c@PaperNo=\count188
+\c@mmroTotal=\count189
+\c@mmroCorrected=\count190
+\c@mmroReviewed=\count191
+\c@mmroAccepted=\count192
+\c@mmroMayBeCompleted=\count193
+\c@mmroMustBeCompleted=\count194
+\c@mmroRejected=\count195
+\c@mmroReviewerNote=\count196
+\c@mmroTotalReviewedPapers=\count197
+\c@mmroTotalReviewerNotes=\count198
+\c@mmroFinalReviewerNotes=\count199
+\c@@authors@no=\count266
+\c@TodoCount=\count267
+\c@PictureNo=\count268
+\c@Theorem=\count269
+\c@State=\count270
+\c@Corollary=\count271
+\c@Def=\count272
+\c@Axiom=\count273
+\c@Hypothesis=\count274
+\c@Assumption=\count275
+\c@Problem=\count276
+\c@Example=\count277
+\c@Fact=\count278
+\c@Remark=\count279
+\c@Notice=\count280
+\c@Rule=\count281
+\c@Condition=\count282
+) (./article.aux
+LaTeX Font Info:    Try loading font information for T2A+cmr on input line 3.
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmr.fd
 File: t2acmr.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-)
-LaTeX Font Info:    ... okay on input line 26.
-Package caption Info: Begin \AtBeginDocument code.
-Package caption Info: subfig package v1.3 is loaded.
-Package caption Info: End \AtBeginDocument code.
+))
+\openout1 = `article.aux'.
 
-ABD: EveryShipout initializing macros
-
-Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
-ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into 
-your preamble.
- on input line 26.
-
-LaTeX Font Info:    Try loading font information for T2A+cmss on input line 27.
-
-(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
-File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
-)
-LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T2A/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Try loading font information for U+msa on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+LaTeX Font Info:    Try loading font information for U+msb on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 27.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
+Package xypdf Info: Line width: 0.47998pt on input line 23.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count283
+\scratchdimen=\dimen277
+\scratchbox=\box49
+\nofMPsegments=\count284
+\nofMParguments=\count285
+\everyMPshowfont=\toks52
+\MPscratchCnt=\count286
+\MPscratchDim=\dimen278
+\MPnumerator=\count287
+\makeMPintoPDFobject=\count288
+\everyMPtoPDFconversion=\toks53
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+ ABD: EveryShipout initializing macros
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable t
+ick labels; missing features). Consider writing \pgfplotsset{compat=1.15} into 
+your preamble.
+ on input line 23.
+
+LaTeX Font Info:    Try loading font information for T2A+cmss on input line 24.
+
+(/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmss.fd
+File: t2acmss.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
+)
 ! Undefined control sequence.
 <argument> {\English 
                      \ifthenelse {\equal {\@title@eng }{}}{}{\typeTitle \@ti...
-l.27 \maketitle
+l.24 \maketitle
                
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -965,7 +997,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 38.
+LaTeX Font Info:    Try loading font information for T2A+cmtt on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/cyrillic/t2acmtt.fd
 File: t2acmtt.fd 2001/08/11 v1.0a Computer Modern Cyrillic font definitions
@@ -977,8 +1009,8 @@ Underfull \hbox (badness 10000) has occurred while \output is active
 ! Undefined control sequence.
 \paper@record ... анализ данных, 2014. Т.\,1, \No 
                                                   \,8.\\ \English }
-l.103 \end{equation}
-                    
+l.113 \end{align}
+                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -988,44 +1020,56 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <recently read> \English 
                          
-l.103 \end{equation}
-                    
+l.113 \end{align}
+                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[1
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-
-LaTeX Warning: Reference `eq:cases' on page 2 undefined on input line 118.
-
-
-LaTeX Warning: Reference `eq:R(F)' on page 2 undefined on input line 118.
-
-
 Underfull \hbox (badness 10000) has occurred while \output is active
 
  []
 
-[2] (./article.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- )
-(\end occurred when \ifx on line 161 was incomplete) 
+[2] (./article.aux) ) 
 Here is how much of TeX's memory you used:
- 27099 strings out of 494284
- 640065 string characters out of 6169717
- 880683 words of memory out of 5000000
- 29889 multiletter control sequences out of 15000+600000
+ 27977 strings out of 494283
+ 652348 string characters out of 6169691
+ 898355 words of memory out of 5000000
+ 30739 multiletter control sequences out of 15000+600000
  30035 words of font info for 82 fonts, out of 8000000 for 9000
  500 hyphenation exceptions out of 8191
- 69i,12n,98p,1067b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,12n,98p,3250b,609s stack positions out of 5000i,500n,10000p,200000b,80000s
+ </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-
+t2a/lasl0800.600pk> </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2
+a/lati1200.600pk> </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/
+lasl1200.600pk> </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/la
+bx1200.600pk> </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm
+0800.600pk> </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/latt12
+00.600pk> </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1200
+.600pk> </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/lasx1440.6
+00pk> </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/lati1095.600
+pk> </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labx1095.600pk
+> </home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1095.600pk> 
+</home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/labi1200.600pk> </
+home/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/lasx1728.600pk> </ho
+me/paul/.texlive2017/texmf-var/fonts/pk/ljfour/lh/lh-t2a/larm1000.600pk></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/symbols/msam10.pfb>
+Output written on article.pdf (2 pages, 177455 bytes).
+PDF statistics:
+ 452 PDF objects out of 1000 (max. 8388607)
+ 89 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on article.dvi (2 pages, 12808 bytes).
