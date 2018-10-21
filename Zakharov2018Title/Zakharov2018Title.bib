@@ -111,16 +111,24 @@
   doi           = {10.1109/mlds.2017.12},
 }
 
-@Article{Zhang2018,
-  author      = {Chi Zhang and Shagan Sah and Thang Nguyen and Dheeraj Peri and Alexander Loui and Carl Salvaggio and Raymond Ptucha},
-  title       = {Semantic Sentence Embeddings for Paraphrasing and Text Summarization},
-  abstract    = {This paper introduces a sentence to vector encoding framework suitable for advanced natural language processing. Our latent representation is shown to encode sentences with common semantic information with similar vector representations. The vector representation is extracted from an encoder-decoder model which is trained on sentence paraphrase pairs. We demonstrate the application of the sentence representations for two different tasks -- sentence paraphrasing and paragraph summarization, making it attractive for commonly used recurrent frameworks that process text. Experimental results help gain insight how vector representations are suitable for advanced language embedding.},
-  date        = {2018-09-26},
-  eprint      = {http://arxiv.org/abs/1809.10267v1},
-  eprintclass = {cs.CL},
-  eprinttype  = {arXiv},
-  file        = {:http\://arxiv.org/pdf/1809.10267v1:PDF},
-  keywords    = {cs.CL, cs.AI},
+@InProceedings{conf/globalsip/ZhangSNPLSP17,
+  title =	"Semantic sentence embeddings for paraphrasing and text
+		 summarization",
+  author =	"Chi Zhang and Shagan Sah and Thang Nguyen and Dheeraj
+		 Peri and Alexander Loui and Carl Salvaggio and Raymond
+		 Ptucha",
+  publisher =	"IEEE",
+  year = 	"2017",
+  bibdate =	"2018-03-13",
+  bibsource =	"DBLP,
+		 http://dblp.uni-trier.de/https://doi.org/10.1109/GlobalSIP.2017.8309051;
+		 DBLP,
+		 http://dblp.uni-trier.de/db/conf/globalsip/globalsip2017.html#ZhangSNPLSP17",
+  booktitle =	"GlobalSIP",
+  crossref =	"conf/globalsip/2017",
+  ISBN = 	"978-1-5090-5990-4",
+  pages =	"705--709",
+  URL =  	"http://ieeexplore.ieee.org/xpl/mostRecentIssue.jsp?punumber=8303183",
 }
 
 @Article{Mehta2018,
@@ -187,16 +195,49 @@
   keywords    = {cs.CL},
 }
 
-@Article{Wu2016,
-  author      = {Yonghui Wu and Mike Schuster and Zhifeng Chen and Quoc V. Le and Mohammad Norouzi and Wolfgang Macherey and Maxim Krikun and Yuan Cao and Qin Gao and Klaus Macherey and Jeff Klingner and Apurva Shah and Melvin Johnson and Xiaobing Liu and Lukasz Kaiser and Stephan Gouws and Yoshikiyo Kato and Taku Kudo and Hideto Kazawa and Keith Stevens and George Kurian and Nishant Patil and Wei Wang and Cliff Young and Jason Smith and Jason Riesa and Alex Rudnick and Oriol Vinyals and Greg Corrado and Macduff Hughes and Jeffrey Dean},
-  title       = {Google's Neural Machine Translation System: Bridging the Gap between Human and Machine Translation},
-  abstract    = {Neural Machine Translation (NMT) is an end-to-end learning approach for automated translation, with the potential to overcome many of the weaknesses of conventional phrase-based translation systems. Unfortunately, NMT systems are known to be computationally expensive both in training and in translation inference. Also, most NMT systems have difficulty with rare words. These issues have hindered NMT's use in practical deployments and services, where both accuracy and speed are essential. In this work, we present GNMT, Google's Neural Machine Translation system, which attempts to address many of these issues. Our model consists of a deep LSTM network with 8 encoder and 8 decoder layers using attention and residual connections. To improve parallelism and therefore decrease training time, our attention mechanism connects the bottom layer of the decoder to the top layer of the encoder. To accelerate the final translation speed, we employ low-precision arithmetic during inference computations. To improve handling of rare words, we divide words into a limited set of common sub-word units ("wordpieces") for both input and output. This method provides a good balance between the flexibility of "character"-delimited models and the efficiency of "word"-delimited models, naturally handles translation of rare words, and ultimately improves the overall accuracy of the system. Our beam search technique employs a length-normalization procedure and uses a coverage penalty, which encourages generation of an output sentence that is most likely to cover all the words in the source sentence. On the WMT'14 English-to-French and English-to-German benchmarks, GNMT achieves competitive results to state-of-the-art. Using a human side-by-side evaluation on a set of isolated simple sentences, it reduces translation errors by an average of 60% compared to Google's phrase-based production system.},
-  date        = {2016-09-26},
-  eprint      = {http://arxiv.org/abs/1609.08144v2},
-  eprintclass = {cs.CL},
-  eprinttype  = {arXiv},
-  file        = {:http\://arxiv.org/pdf/1609.08144v2:PDF},
-  keywords    = {cs.CL, cs.AI, cs.LG},
+@article{DBLP:journals/corr/WuSCLNMKCGMKSJL16,
+  author    = {Yonghui Wu and
+               Mike Schuster and
+               Zhifeng Chen and
+               Quoc V. Le and
+               Mohammad Norouzi and
+               Wolfgang Macherey and
+               Maxim Krikun and
+               Yuan Cao and
+               Qin Gao and
+               Klaus Macherey and
+               Jeff Klingner and
+               Apurva Shah and
+               Melvin Johnson and
+               Xiaobing Liu and
+               Lukasz Kaiser and
+               Stephan Gouws and
+               Yoshikiyo Kato and
+               Taku Kudo and
+               Hideto Kazawa and
+               Keith Stevens and
+               George Kurian and
+               Nishant Patil and
+               Wei Wang and
+               Cliff Young and
+               Jason Smith and
+               Jason Riesa and
+               Alex Rudnick and
+               Oriol Vinyals and
+               Greg Corrado and
+               Macduff Hughes and
+               Jeffrey Dean},
+  title     = {Google's Neural Machine Translation System: Bridging the Gap between
+               Human and Machine Translation},
+  journal   = {CoRR},
+  volume    = {abs/1609.08144},
+  year      = {2016},
+  url       = {http://arxiv.org/abs/1609.08144},
+  archivePrefix = {arXiv},
+  eprint    = {1609.08144},
+  timestamp = {Mon, 13 Aug 2018 16:46:24 +0200},
+  biburl    = {https://dblp.org/rec/bib/journals/corr/WuSCLNMKCGMKSJL16},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
 @InCollection{Singh2017,
