@@ -195,7 +195,7 @@
     \setcounter{footnote}{0}%
     \endgroup
 }
-\def\maketitle{%
+\def\maketitle{
     \@BeginDocument
     % на предыдущей странице почему-то подавлялся вывод колонтитулов
     % (видимо, это побочный эффект \twocolumn
@@ -262,7 +262,6 @@
     % балансировка колонок -- только в конце статьи
     \nobalance
 }
-
 \def\@clear@title{%
     \gdef\@title{}%
     \gdef\@title@short{}%
@@ -353,7 +352,7 @@
 \def\paper@record{{%
     %\textit{\@author} \@title~//
     \Russian
-    Машинное обучение и анализ данных, 2014. Т.\,1, \No\,8.\\
+    %Машинное обучение и анализ данных, 2014. Т.\,1, \No\,8.\\
     \English
     %Machine Learning and Data Analysis, 2014. Vol.\,1\,(8).
     }%
