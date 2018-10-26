@@ -89,7 +89,7 @@ l\left(\mathbf{W}_\alpha, \mathbf{b}_\beta\right) = -\sum\limits_{k=1}^{D}\sum\l
 \end{equation}
 Полученное мягкое предсказание в дальнейшем используется для формирования конечного прогноза
 \subsection{Предсказание качества машинного перевода}
-Для предсказания качества машинного перевода используется $\epsilon$-SVR метод. Пусть $\mathfrac{D}=\left\lbrace x_i\right\rbrace$ - объекты (векторные представления предложений), $\mathbf{Y}=\left\lbrace y_i\right\rbrace$ - целевые векторы. Требуется найти гладкую функцию $f$ такую, что:
+Для предсказания качества машинного перевода используется $\epsilon$-SVR метод. Пусть $\mathfrak{D}=\left\lbrace x_i\right\rbrace$ - объекты (векторные представления предложений), $\mathbf{Y}=\left\lbrace y_i\right\rbrace$ - целевые векторы. Требуется найти гладкую функцию $f$ такую, что:
 \begin{equation}
 \label{esvr}
 \underset{w, b, \xi, \xi^*}{min} \frac{1}{2}w^Tw+C\sum\limits_{i=1}^n\xi_i+C\sum\limits_{i=1}^n\xi_i^*
