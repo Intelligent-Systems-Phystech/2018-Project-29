@@ -2,6 +2,7 @@
 *.aux
 *.log
 *.sh
+!code/setup.sh
 *.bbl
 *.blg
 *.synctex.gz
