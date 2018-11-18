@@ -19,7 +19,9 @@ ENV ROUGE_EVAL_HOME=/home/jovyan/torch_samuraizer/SummaRuNNer/nlp-metrics/ROUGE-
 #Change user on jovyan
 USER jovyan
 
-### DELETE in output/eval.py substring "-e /YOUR/PATH/TO/ROUGE-1.5.5/data"
+#Modify SummaRuNNer's files in order to trace losses and fix bugs
+COPY ./main.py /home/jovyan/torch_samuraizer/SummaRuNNer/main.py
+COPY ./eval.py /home/jovyan/torch_samuraizer/SummaRuNNer/outputs/eval.py
 
 # Throw ports of our image
 # 8888 jupyter port 
