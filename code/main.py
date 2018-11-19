@@ -14,7 +14,6 @@ from torch.nn.utils import clip_grad_norm
 from time import time
 from tqdm import tqdm
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s [INFO] %(message)s')
 parser = argparse.ArgumentParser(description='extractive summary')
 # model
 parser.add_argument('-save_dir',type=str,default='checkpoints/')
@@ -44,6 +43,7 @@ parser.add_argument('-load_dir',type=str,default='checkpoints/RNN_RNN_seed_1.pt'
 parser.add_argument('-test_dir',type=str,default='data/test.json')
 parser.add_argument('-ref',type=str,default='outputs/ref')
 parser.add_argument('-hyp',type=str,default='outputs/hyp')
+parser.add_argument('-log_file', type=str, default='SummaRunnerLog.log')
 parser.add_argument('-topk',type=int,default=3)
 # device
 parser.add_argument('-device',type=int)
@@ -53,6 +53,8 @@ parser.add_argument('-debug',action='store_true')
 parser.add_argument('-predict',action='store_true')
 args = parser.parse_args()
 use_gpu = args.device is not None
+
+logging.basicConfig(level=logging.INFO, format='%(message)s', filename=args.log_file)
 
 if torch.cuda.is_available() and not use_gpu:
     print("WARNING: You have a CUDA device, should run with -device 0")
@@ -99,7 +101,6 @@ def train():
         examples = [json.loads(line) for line in f]
     val_dataset = utils.Dataset(examples)
 
-    curve = open('curve.csv', 'w')
     # update args
     args.embed_num = embed.size(0)
     args.embed_dim = embed.size(1)
@@ -143,14 +144,12 @@ def train():
             if args.debug:
                 print('Batch ID:%d Loss:%f' %(i,loss.data[0]))
                 continue
-            if i % args.report_every == 0:
-                cur_loss = eval(net,vocab,val_iter,criterion)
-                if cur_loss < min_loss:
-                    min_loss = cur_loss
-                    best_path = net.save()
-                logging.info('Epoch: %2d Min_Val_Loss: %f Cur_Val_Loss: %f'
+		cur_loss = eval(net,vocab,val_iter,criterion)
+        if cur_loss < min_loss:
+        	min_loss = cur_loss
+        	best_path = net.save()
+        logging.info('Epoch: %2d Min_Val_Loss: %f Cur_Val_Loss: %f'
                         % (epoch,min_loss,cur_loss))
-    	curve.write('%f, ' %  cur_loss)
     t2 = time()
     logging.info('Total Cost:%f h'%((t2-t1)/3600))
     curve.close()
