@@ -23,6 +23,9 @@ USER jovyan
 COPY ./main.py /home/jovyan/torch_samuraizer/SummaRuNNer/main.py
 COPY ./eval.py /home/jovyan/torch_samuraizer/SummaRuNNer/outputs/eval.py
 
+#Copy start train script 
+COPY ./setup.py /home/jovyan/
+
 # Throw ports of our image
 # 8888 jupyter port 
 EXPOSE 8888 

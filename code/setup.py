@@ -3,12 +3,17 @@ import argparse
 import sys
 import os
 
+
 #command line argument parser. What else arguments do we need?
 def createParser ():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('--epochs', nargs='?', default='5')
 	parser.add_argument('--smr_batch', nargs='?', default='10')
 	parser.add_argument('--smr_svdir', nargs='?', default='test')
+	parser.add_argument('--omnt_valid_batch', nargs='?', default='10')
+	parser.add_argument('--omnt_batch', nargs='?', default='10')
+	parser.add_argument('--onmt_steps', nargs='?', default='1000')
+	parser.add_argument('--onmt_valid_steps', nargs='?', default='1000')
 	return parser
 
 if __name__ == '__main__':
@@ -22,10 +27,11 @@ if __name__ == '__main__':
 		pid_opennmt = -1
 	if (pid_summarunner == 0):
 		os.chdir("/home/jovyan/torch_samuraizer/SummaRuNNer")
-		os.execv("/home/jovyan/torch_samuraizer/SummaRuNNer/main.py", ["-batch_size "+str(args.smr_batch)+"-model RNN_RNN -seed 1 -save_dir checkpoints/"+str(args.smr_svdir), " -log_file smr.log -epochs "+str(args.epochs)]) #it seems that parameters should be passed as a single string
+		os.execv("main.py", ["-batch_size "+str(args.smr_batch)+"-model RNN_RNN -seed 1 -save_dir checkpoints/"+str(args.smr_svdir) +  " -log_file smr.log -epochs "+str(args.epochs)]) #it seems that parameters should be passed as a single string
 	elif (pid_opennmt == 0):
 		#launch opennmt
-		os.execl("./2.py", "5")
+		os.chdir("/home/jovyan/OpenNNTTranslator/OpenNMT-py")
+		os.system("python train.py" + " -data data/corpus -save_model corpus_model  -batch_size "+str(args.onmt_steps)+  " -valid_batch_size "+str(args.omnt_valid_batch) + " -seed 1  -log_file omnt.log -train_steps "+str(args.onmt_steps) + " -valid_steps "+str(args.onmt_valid_steps)) #it seems that parameters should be passed as a single string
 		#sys.exit(1)
 	else:
 		print ("wait")
