@@ -144,7 +144,7 @@ def train():
             if args.debug:
                 print('Batch ID:%d Loss:%f' %(i,loss.data[0]))
                 continue
-		cur_loss = eval(net,vocab,val_iter,criterion)
+        cur_loss = eval(net,vocab,val_iter,criterion)
         if cur_loss < min_loss:
         	min_loss = cur_loss
         	best_path = net.save()
