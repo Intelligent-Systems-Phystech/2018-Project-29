@@ -33,6 +33,9 @@ if __name__ == '__main__':
     elif (pid_opennmt == 0):
         #launch opennmt
         os.chdir("/home/jovyan/OpenNMT-py")
+        status = os.system("python preprocess.py -train_src data/src-train.txt -train_tgt data/tgt-train.txt -valid_src data/src-val.txt -valid_tgt data/tgt-val.txt -save_data data/corpus")
+        if (status != 0):
+            sys.exit(1)
         status = os.system("./train.py -data data/corpus -save_model corpus_model  -batch_size "+str(args.onmt_steps)+  " -valid_batch_size "+str(args.omnt_valid_batch) + " -seed 1  -log_file omnt.log -train_steps "+str(args.onmt_steps) + " -valid_steps "+str(args.onmt_valid_steps)) 
         if (status != 0):
             sys.exit(1)
