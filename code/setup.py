@@ -27,16 +27,17 @@ if __name__ == '__main__':
         pid_opennmt = -1
     if (pid_summarunner == 0):
         os.chdir("/home/jovyan/torch_samuraizer/SummaRuNNer")
-        status = os.system("./main.py -batch_size "+str(args.smr_batch)+" -model RNN_RNN -seed 1 -save_dir checkpoints/"+str(args.smr_svdir) +  " -log_file smr.log -epochs "+str(args.epochs)) #it seems that parameters should be passed as a single string
+        status = os.system("./main.py -batch_size "+str(args.smr_batch)+" -model RNN_RNN -seed 1 -device 1 -save_dir checkpoints/"+str(args.smr_svdir) +  " -log_file smr.log -epochs "+str(args.epochs)) #it seems that parameters should be passed as a single string
         if (status != 0):
             sys.exit(1)
     elif (pid_opennmt == 0):
         #launch opennmt
         os.chdir("/home/jovyan/OpenNMT-py")
-        status = os.system("python preprocess.py -train_src data/src-train.txt -train_tgt data/tgt-train.txt -valid_src data/src-val.txt -valid_tgt data/tgt-val.txt -save_data data/corpus")
+        status = os.system("python preprocess.py -train_src data/src-train.txt -train_tgt data/tgt-train.txt -valid_src data/src-val.txt -valid_tgt data/tgt-val.txt -save_data data/corpus CUDA_VISIBLE_DEVICES=1,3")
         if (status != 0):
             sys.exit(1)
-        status = os.system("./train.py -data data/corpus -save_model corpus_model  -batch_size "+str(args.onmt_steps)+  " -valid_batch_size "+str(args.omnt_valid_batch) + " -seed 1  -log_file omnt.log -train_steps "+str(args.onmt_steps) + " -valid_steps "+str(args.onmt_valid_steps)) 
+        os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+        status = os.system("./train.py -data data/corpus -save_model corpus_model -world_size 1 -gpu_ranks 0 -batch_size "+str(args.onmt_steps)+  " -valid_batch_size "+str(args.omnt_valid_batch) + " -seed 1  -log_file omnt.log -train_steps "+str(args.onmt_steps) + " -valid_steps "+str(args.onmt_valid_steps)) 
         if (status != 0):
             sys.exit(1)
     else:
