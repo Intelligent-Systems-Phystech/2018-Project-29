@@ -4,7 +4,7 @@ FROM registry.gitlab.com/rbtech/collab/task29/jupyterhub_base:samuraizer_researc
 USER root
 
 #install git and perl
-RUN apt-get install -y  git && apt-get install -y  libxml-dom-perl && pip install pyrouge
+RUN apt-get install -y  git && apt-get install -y  libxml-dom-perl &&  apt-get install -y  wget && pip install pyrouge
 
 #Install required libs
 RUN cd /home/jovyan && git clone https://github.com/OpenNMT/OpenNMT-py && cd OpenNMT-py && pip install -r requirements.txt \
@@ -18,6 +18,9 @@ EXPOSE 8888
 RUN apt-get update 
 RUN apt-get install -y vim
 
+#Add data
+RUN cd /home/jovyan/OpenNMT-py/data && wget https://downloader.disk.yandex.ru/disk/112d47841cd32f0f10e2129b8302fbae296023702582fdacd9b68b5311d2767e/5bf84568/4MoO_5X9SrhiCGs8qBbQivKYbqxN7Vg1YsrF-0pX5QFYcYXtolt7zhzy3kQP83bufSRBVhzRtGTnxN-x4IwLSw%3D%3D?uid=0&filename=data.tar.gz&disposition=attachment&hash=VBThr3cxNPufRGB%2Biaua5K8aX/pgIGfGqVsB5263pGKo9IQmtMzh3GaxDulKUVYNq/J6bpmRyOJonT3VoXnDag%3D%3D%3A&limit=0&content_type=application%2Fx-gzip&fsize=2322647040&hid=7afd3e6f34e032774625fdcc4fe0cba1&media_type=compressed&tknv=v2 -O HELP_ME &&
+tar -x HELP_ME   
 # Add path
 RUN pyrouge_set_rouge_path /home/jovyan/torch_samuraizer/SummaRuNNer/nlp-metrics/ROUGE-1.5.5
 
