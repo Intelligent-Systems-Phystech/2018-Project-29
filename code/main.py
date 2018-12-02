@@ -152,7 +152,6 @@ def train():
                         % (epoch,min_loss,cur_loss))
     t2 = time()
     logging.info('Total Cost:%f h'%((t2-t1)/3600))
-    curve.close()
 
 def test():
      

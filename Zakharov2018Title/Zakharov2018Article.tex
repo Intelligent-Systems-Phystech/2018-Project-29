@@ -57,12 +57,12 @@
 На втором слое строятся такие же цепочки нейронов, для прямой: 
 \begin{equation}
 \label{forwardsent}
-\mathbf{x}_j = \frac{1}{N_j}\sum\limits_{k=1}^{N_j}\left[\mathbf{h}_j^f, \mathbf{h}_j^b\right],
+\mathbf{x}_j = \frac{1}{N_j}\sum\limits_{k=1}^{N_j}\left[\mathbf{h}_{k,j}^f, \mathbf{h}_{k,j}^b\right],
 \end{equation} 
 где $\mathbf{h}_j^f$ - скрытое состояние нейронов прямой цепочки для j-ого предложения, а $\mathbf{h}_j^b$ - обратной. Квадратные скобки означают конкатенацию векторов. Для обратной цепочки:
 \begin{equation}
 \label{backwardsent}
-\mathbf{x}_j = \frac{1}{N_{M-j}}\sum\limits_{k=1}^{N_{M-j}}\left[\mathbf{h}_{M-j}^f, \mathbf{h}_{M-j}^b\right],
+\mathbf{x}_j = \frac{1}{N_{M-j}}\sum\limits_{k=1}^{N_{M-j}}\left[\mathbf{h}_{k,M-j}^f, \mathbf{h}_{k,M-j}^b\right],
 \end{equation} 
 где $M$ - число предложений в документе
 Представление документа $\mathbf{d}$ формируется следующим образом:
@@ -139,6 +139,25 @@ p\left(y_i|y_1,\dots,y_{i-1}, \mathbf{x}\right) = g\left(y_{i-1}, s_i, c_i\right
 y_{final,i}=y_{MT,i}\left(1-\lambda\right)+y_{ES,i}\lambda,
 \end{equation}
 где $\lambda$ - эмпирически подбираемый параметр, отражающий важность информативности предложения по сравнению с предполагаемым качеством перевода. К примеру, при $\lambda=1$ качество перевода вообще не учитывается. После этого отбирается несколько предложений с наивысшими оценками. Их количество зависит от настроек используемой метрики ROUGE. \textcolor{red}{(Каких конкретно? скорее всего, будет выбрано несколько - допишется, когда конкретно определимся)} После этого отбираются переводы предложений с лучшими оценками.
+\section{Вычислительный эксперимент}
+
+Для обучения SummaRuNNer использовался датасет CNN/DailyMail - 193983 объекта. Размерность скрытого состояния - 200, количество эпох - 20. Размер словаря - 153824
+
+Обучение OpenNMT происходило на корпусе OpenSubtitles2018\footnote{http://opus.nlpl.eu/OpenSubtitles2018.php} - 20728084 объектов. Размерность скрытого состояния LSTM - 500. Сделано 800000 итераций, размер пачки данных - 64.
+
+\subsection{\small{SummaRuNNer}}
+
+
+\begin{figure}[!htbp]
+\centering
+  \subfloat[Исходные признаки]{\includegraphics[width=0.5\textwidth]{Accuracy.eps}}
+  \subfloat[Разделенные признаки]{\includegraphics[width=0.5\textwidth]{Cross-entropy.eps}}\\
+ \caption{Зависимость площади AUC под ROC-кривой, процента ошибок и эмпирического риска для исходных и разделенных признаков
+  от числа итераций метода градиентного спуска}
+  \label{fig:comparison_auc_mistakes_risk}
+\end{figure}
+
+
 \bibliographystyle{ieeetr}
 \bibliography{Zakharov2018Title}
 
