@@ -140,21 +140,64 @@ y_{final,i}=y_{MT,i}\left(1-\lambda\right)+y_{ES,i}\lambda,
 \end{equation}
 где $\lambda$ - эмпирически подбираемый параметр, отражающий важность информативности предложения по сравнению с предполагаемым качеством перевода. К примеру, при $\lambda=1$ качество перевода вообще не учитывается. После этого отбирается несколько предложений с наивысшими оценками. Их количество зависит от настроек используемой метрики ROUGE. \textcolor{red}{(Каких конкретно? скорее всего, будет выбрано несколько - допишется, когда конкретно определимся)} После этого отбираются переводы предложений с лучшими оценками.
 \section{Вычислительный эксперимент}
-
-Для обучения SummaRuNNer использовался датасет CNN/DailyMail - 193983 объекта. Размерность скрытого состояния - 200, количество эпох - 20. Размер словаря - 153824
-
-Обучение OpenNMT происходило на корпусе OpenSubtitles2018\footnote{http://opus.nlpl.eu/OpenSubtitles2018.php} - 20728084 объектов. Размерность скрытого состояния LSTM - 500. Сделано 800000 итераций, размер пачки данных - 64.
-
 \subsection{\small{SummaRuNNer}}
-
+Для обучения SummaRuNNer использовался датасет CNN/DailyMail - 193983 объекта. Размерность скрытого состояния - 200, количество эпох - 20. Размер словаря - 153824
 
 \begin{figure}[!htbp]
 \centering
-  \subfloat[Исходные признаки]{\includegraphics[width=0.5\textwidth]{Accuracy.eps}}
-  \subfloat[Разделенные признаки]{\includegraphics[width=0.5\textwidth]{Cross-entropy.eps}}\\
- \caption{Зависимость площади AUC под ROC-кривой, процента ошибок и эмпирического риска для исходных и разделенных признаков
-  от числа итераций метода градиентного спуска}
-  \label{fig:comparison_auc_mistakes_risk}
+\includegraphics[width=0.8\textwidth]{epoch_losses.eps}
+\caption{Функция потерь на валидации в зависимости от числа прошедших эпох}
+\end{figure}
+
+\newpage
+Кроме того, нейронная сеть была обучена на 1/8, 1/16 и 1/32 обучающей выборки; были сравнены результаты теста по метрике ROUGE:
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=\textwidth]{learning_curve.eps}
+\caption{Метрика качества извлечения в зависимости от размера выборки}
+\end{figure}
+
+Те же данные в виде таблицы ниже. Реализация SummaRuNNer такова, что после очередной эпохи результат сохраняется только в случае, когда модель показывает лучший результат на валидации, чем достигнутый прежде. Во всех случаях этот результат фактически достигался на 2 эпохе. Время указано в пересчете на 5 эпох.
+
+\begin{table}[!htbp]
+\label{SummaTable}
+\caption{Обучение SummaRuNNer на различных объемах выборки}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Объем выборки & Время обучения, ч & ROUGE-1 Recall & ROUGE-2 Recall & ROUGE-L Recall \\
+\hline
+193983 & 20.315 & 0.26341 & 0.11792 & 0.14068 \\
+\hline
+24247 & 2.833 & 0.25041 & 0.10689 & 0.13319 \\
+\hline
+12123 & 1.576 & 0.24382 & 0.10188 & 0.12889 \\
+\hline
+6061 & 0.937 & 0.24164 & 0.09941 & 0.12744 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{\small{OpenNMT}}
+
+Обучение OpenNMT происходило на корпусе OpenSubtitles2018\footnote{http://opus.nlpl.eu/OpenSubtitles2018.php} - 20728084 объектов. Размерность скрытого состояния LSTM - 500. Сделано 800000 итераций, размер пачки данных - 64.
+
+\begin{figure}[!htbp]
+\centering
+  \subfloat[Кросс-энтропия]{\includegraphics[width=0.5\textwidth]{Cross-entropy.eps}}
+  \subfloat[Точность]{\includegraphics[width=0.5\textwidth]{Accuracy.eps}}\\
+ \caption{Обучение OpenNMT}
+  \label{NMT-train}
+\end{figure}
+
+Видно, что на валидации точность и perplexity стабилизируются:
+
+\begin{figure}[!htbp]
+\centering
+  \subfloat[Perplexity]{\includegraphics[width=0.5\textwidth]{Val_Perplexity.eps}}
+  \subfloat[Точность]{\includegraphics[width=0.5\textwidth]{Val_Accuracy.eps}}\\
+ \caption{Валидация OpenNMT}
+  \label{NMT-valid}
 \end{figure}
 
 

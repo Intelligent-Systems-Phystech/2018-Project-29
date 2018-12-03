@@ -7,13 +7,13 @@ import os
 #command line argument parser. What else arguments do we need?
 def createParser ():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--epochs', nargs='?', default='5')
-    parser.add_argument('--smr_batch', nargs='?', default='10')
+    parser.add_argument('--epochs', nargs='?', default='10')
+    parser.add_argument('--smr_batch', nargs='?', default='32')
     parser.add_argument('--smr_svdir', nargs='?', default='test')
-    parser.add_argument('--omnt_valid_batch', nargs='?', default='10')
-    parser.add_argument('--omnt_batch', nargs='?', default='10')
+    parser.add_argument('--onmt_valid_batch', nargs='?', default='32')
+    parser.add_argument('--onmt_batch', nargs='?', default='64')
     parser.add_argument('--onmt_steps', nargs='?', default='1000')
-    parser.add_argument('--onmt_valid_steps', nargs='?', default='1000')
+    parser.add_argument('--onmt_valid_steps', nargs='?', default='10000')
     return parser
 
 if __name__ == '__main__':
@@ -33,13 +33,14 @@ if __name__ == '__main__':
     elif (pid_opennmt == 0):
         #launch opennmt
         os.chdir("/home/jovyan/OpenNMT-py")
-        status = os.system("python preprocess.py -train_src data/src-train.txt -train_tgt data/tgt-train.txt -valid_src data/src-val.txt -valid_tgt data/tgt-val.txt -save_data data/corpus CUDA_VISIBLE_DEVICES=1,3")
-        if (status != 0):
-            sys.exit(1)
+        #status = os.system("python preprocess.py -train_src data/src-train.txt -train_tgt data/tgt-train.txt -valid_src data/src-val.txt -valid_tgt data/tgt-val.txt -save_data data/corpus")
+        #if (status != 0):
+            #sys.exit(1)
         os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-        status = os.system("./train.py -data data/corpus -save_model corpus_model -world_size 1 -gpu_ranks 0 -batch_size "+str(args.onmt_steps)+  " -valid_batch_size "+str(args.omnt_valid_batch) + " -seed 1  -log_file omnt.log -train_steps "+str(args.onmt_steps) + " -valid_steps "+str(args.onmt_valid_steps)) 
+        status = os.system("./train.py -data data/corpus -save_model corpus_model -world_size 1 -gpu_ranks 0 -batch_size "+str(args.onmt_batch)+  " -seed 1  -log_file omnt.log -train_steps "+str(args.onmt_steps) + " -valid_steps "+str(args.onmt_valid_steps)) 
         if (status != 0):
             sys.exit(1)
+        #sys.exit(0)
     else:
         #wait for processes to exit
         res1 = os.waitid(os.P_PID, pid_summarunner, os.WEXITED)
