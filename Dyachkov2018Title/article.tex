@@ -122,8 +122,84 @@ y_i - \mathbf{w}^T\mathbf{f}(\mathbf{V}_i) - b & \leq & \epsilon+\xi^*_i \\
 y_{overall,i} = \left(1-\lambda \right) y_{INF,i} +\lambda y_{MT,i}
 \end{equation}
 где $\lambda \in\left[0,1\right]$  - глобальный параметр контролирующий важность одной оценки - качество перевода, относительно другогой -  иформативность. После этого отбирается несколько предложений с наивысшими оценками. Количество отбираемых предлжений также настраиваемый параметр, зависящий от метрики ROUGE. После этого происходит перевод, описание см. в \cite{DBLP:journals/corr/KleinKDSR17}.
+
+
+\section{3. Вычислительный эксперимент}
+
+\subsection{3.1 OpenNMT}
+
+Обучение OpenNMT происходило на корпусе OpenSubtitles2018\footnote{\url{http://opus.nlpl.eu/OpenSubtitles2018.php}} - 20728084 объектов. Размерность скрытого состояния LSTM - 500. Сделано 800000 итераций, размер пачки данных - 64, размерность данных для валидации 64
+\newpage
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[Кросс-энтропия]{\includegraphics[width=0.5\textwidth]{Cross-entropy.eps}}
+	\subfloat[Точность]{\includegraphics[width=0.5\textwidth]{Accuracy.eps}}\\
+	\caption{Обучение OpenNMT}
+	\label{NMT-train}
+\end{figure}
+
+\begin{figure}[!htbp]
+	\centering
+	\subfloat[Perplexity]{\includegraphics[width=0.5\textwidth]{Val_Perplexity.eps}}
+	\subfloat[Точность]{\includegraphics[width=0.5\textwidth]{Val_Accuracy.eps}}\\
+	\caption{Валидация OpenNMT}
+	\label{NMT-valid}
+\end{figure}
+
+
+Видно, что на валидации точность и perplexity выходят на постоянный уровень: 51 и 15 соответственно 
+Также  на обучении кросс-энтропия и точность выходят практически на постоянный уровень и колеблются около него: 2.2 и 55 
+
+\subsection{3.1 SummaRuNNer}
+Для обучения SummaRuNNer использовался датасет CNN/DailyMail - 193983 объекта. Размерность скрытого состояния - 200, количество эпох - 20. Размер словаря - 153824,  размер пачки данных - 32, размерность данных для валидации 32
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.8\textwidth]{epoch_losses.eps}
+	\caption{Функция потерь на валидации в зависимости от числа прошедших эпох}
+\end{figure}
+
+\newpage
+Кроме того, нейронная сеть была обучена на 1/8, 1/16 и 1/32 обучающей выборки; были сравнены результаты теста по метрике ROUGE:
+
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=\textwidth]{learning_curve.eps}
+	\caption{Метрика качества извлечения в зависимости от размера выборки}
+\end{figure}
+
+Видно, что можно безпрепятственно сократить число эпох до 5, SummaRuNNer сохраняет всегда только лучшую модель и во всех эксперминтах эта модель получалось на 2-5 эпохах, дальнейшее увеличения числа итераций не приводит к получению более качественной модели. Так же можно сократить размер выборки тем самым значительно сократив время обучения 
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{time.eps}
+	\caption{Время обучения модели на различных размерах выборки}
+	
+\end{figure}
+
+\newpage
+Ниже произведено сравнение используемой модели с разными опциями и некоторыми аналогичными моделями. 
+
+\begin{table}[!htbp]
+	\label{SummaTable}
+	\caption{Обучение SummaRuNNer на различных объемах выборки}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Модель & ROUGE-1 Recall & ROUGE-2 Recall & ROUGE-L Recall \\
+		\hline
+		Использ. реализация & 0.26341 & 0.11792 & 0.14068 \\
+		\hline
+		Реализация в \cite{DBLP:journals/corr/NallapatiZZ16} & 0.262 & 0.108 & 0.144 \\
+		\hline
+		CNN-RNN\footnote{2 последних реализации взяты из \url{https://github.com/hpzhao/SummaRuNNer}} & 0.258 & 0.113 & 0.138 \\
+		\hline
+		Hierarch. Attention & 0.26 & 0.114 & 0.138 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
 \bibliographystyle{plain}
-\bibliography{Dyachkov}
+\bibliography{Selnitskiy}
 %\begin{thebibliography}{1}
 
 %\bibitem{author09anyscience}
